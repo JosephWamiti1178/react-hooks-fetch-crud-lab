@@ -15,6 +15,21 @@ function App() {
     setQuestions([ ...questions,newQuestion]);
     console.log("new questions :", newQuestion);
   }
+  function onDelete(deletedQuestion){
+    const updatedItems = questions.filter((question) => question.id !== deletedQuestion.id);
+    setQuestions(updatedItems);
+    console.log("deleted questions :", deletedQuestion);
+  }
+  function onUpdateQuestion(updatedQuestion){
+    const updatedQuestions = questions.map((q) => {
+      if (q.id === updatedQuestion.id) return updatedQuestion;
+      return q;
+    });
+    
+    setQuestions(updatedQuestions);
+    console.log(updatedQuestions);
+    console.log("update questions :", updatedQuestions);
+  }
 
 
   return (
