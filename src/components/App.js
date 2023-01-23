@@ -11,6 +11,10 @@ function App() {
       .then((r) => r.json())
       .then((questions) => setQuestions(questions));
   }, []);
+  function onAddQuestion(newQuestion) {
+    setQuestions([ ...questions,newQuestion]);
+    console.log("new questions :", newQuestion);
+  }
 
 
   return (
